@@ -1,12 +1,12 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { BrowserRouter } from 'react-router-dom';
+import { HashRouter } from 'react-router-dom';
 import App from './App';
 import BookingForm from './components/BookingForm';
 import Header from './components/Header';
 
 test('Renders the Header heading', () => {
-    render(<BrowserRouter><App /></BrowserRouter>);
+    render(<HashRouter><App /></HashRouter>);
     const headingElement = screen.getByText("Reserve Table");
     expect(headingElement).toBeInTheDocument();
 
@@ -18,7 +18,7 @@ test('Renders the Header heading', () => {
 })
 
 test('Initialize/Update Times', () => {
-  render(<BrowserRouter><App /></BrowserRouter>);
+  render(<HashRouter><App /></HashRouter>);
   const reserveButton = screen.getByRole("button");
   fireEvent.click(reserveButton);
 
